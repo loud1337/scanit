@@ -6,7 +6,7 @@ class Colors():
   init()
 
 
-# test
+
 
 
 # function to test a specific port
@@ -99,7 +99,7 @@ def main():
 		print("Enter the IP addresses to scan, seperated by a ','")
 		print("e.g, 0.0.0.0,0.0.0.1")
 		targets = input("").split(',')
-		print("1 - Range of Ports \n2 - Common Ports")
+		print("1 - Range of Ports \n2 - Commonly used ports")
 		portChoice = int(input("Select your option: "))
 		portsToScan = handle_port_choice(portChoice)	
 		
@@ -107,7 +107,7 @@ def main():
 			#thread.start_new_thread(scan_target_IP, (ip, portsToScan))
 			scan_target_IP(ip, portsToScan)
 	else:
-		print("Command not recognised. Run again")
+		print("Command not recognized. Maybe run it again?")
 	
 	print("Done scanning HOST: " + target)
 
