@@ -1,0 +1,2 @@
+[OPEN] Port: 80 Host: hackthissite.org
+[OPEN] Port: 443 Host: hackthissite.org
