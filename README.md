@@ -8,4 +8,4 @@ Scan That Port is an open-source Port scanner made on "Repl.it" but contributed 
 Run "main.py"
 
 # Requirements
-"pip install requirements.txt"
+colorama
