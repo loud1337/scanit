@@ -8,8 +8,7 @@ class Colors():
 
 
 
-data = json.load("settings/Type.json")
-Beta = data["beta"]
+
 # function to test a specific port
 def test_specified_port(targetIp, port):
 	skt = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
