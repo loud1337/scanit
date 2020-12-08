@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "packager_files": true
+    },
+    "editor.formatOnSave": true,
+    "[json]": {
+        "editor.formatOnSave": false
+    },
+    "[jsonc]": {
+        "editor.formatOnSave": false
+    },
+    "editor.defaultFormatter": "none"
+}
