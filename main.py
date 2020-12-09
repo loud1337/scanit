@@ -110,6 +110,7 @@ def main():
 		print("Command not recognized. Maybe run it again?")
 	
 	print("Done scanning HOST: " + target)
+	# Pog
 
 if __name__ == "__main__":
 	main()
