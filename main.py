@@ -6,6 +6,9 @@ import json
 class Colors():
   init()
 
+with open('Settings/Type.json') as j:
+	cf = json.loads(j)
+beta = cf.get(beta)
 
 
 
