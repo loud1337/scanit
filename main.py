@@ -1,3 +1,4 @@
+import balls
 import socket
 from colorama import init, Fore
 import json
@@ -10,6 +11,8 @@ with open('Settings/Type.json') as j:
 	cf = json.loads(j)
 beta = cf.get(beta)
 
+
+#help i barely know python
 
 
 # function to test a specific port
@@ -30,8 +33,7 @@ def test_specified_port(targetIp, port):
 
 # function to handle the range port choice
 def get_range_of_ports():
-	Prange = input("[S] Port range to scan - e.g, 1-10: ")
-		
+	Prange = input("[S] Ball range to scan - e.g, 1-10: ")	
 	lowerPort = int(Prange.split('-')[0])
 	upperPort = int(Prange.split('-')[1])
 	
@@ -39,7 +41,7 @@ def get_range_of_ports():
 
 # function to handle the common port choice
 def get_common_ports():
-	print("[S] Scanning the commonly used ports")
+	print("[S] Scanning the commonly used balls")
 	# array of commonly used ports (Red Team Field Manual)
 	commonPorts = [21, 22, 23, 25, 49, 53, 67, 68, 69, 80, 88, 110, 111, 123, 135, 137, 138,
 		139, 143, 161, 179, 201, 389, 443, 445, 500, 514, 520, 546, 547, 587, 902, 1080,
@@ -59,19 +61,19 @@ def handle_port_choice(choice):
 
 # function to handle scanning of target IP (used in multi-threading)
 def scan_target_IP(ipAddress, ports):
-	print("[S] Scanning target: ", ipAddress)
+	print("[S] Scanning target balls: ", ipAddress)
 	for portNumber in ports:
 		test_specified_port(ipAddress, portNumber)
 
 # main functionality starts here
 def main():
-	print(Fore.RED + " Scan Dat Port")
+	print(Fore.RED + " Scan Dat BALL")
 	print("@Diary - @Twirls" + Fore.WHITE)
 	print("1 - Single IP \n2 - IP range \n3 - Specific IPs")
-	choice = int(input("[I] Select your option: "))
+	choice = int(input("[I] Select your balls option: "))
 	
 	if choice == 1:
-		print("Enter the IP address to scan: ")
+		print("Enter the B.A.L.L address to scan: ")
 		target = str(input(""))
 		print("1 - Range of Ports \n2 - Common Ports")
 		portChoice = int(input("Select your option: "))
@@ -80,7 +82,7 @@ def main():
 		scan_target_IP(target, portsToScan)	
 			
 	elif choice == 2:
-		print("[S] Enter the IP addresses to scan between, seperated by a '-'")
+		print("[S] Enter the B.A.L.L addresses to scan between, seperated by a '-'")
 		print("e.g, 0.0.0.0-0.0.0.100")
 		targets = input("").split('-')
 		splitIP = targets[0].split('.')
@@ -89,7 +91,7 @@ def main():
 		lowerIP = int(splitIP[3])
 		upperIP = int(targets[1].split('.')[3])
 	
-		print("1 - Range of Ports \n2 - Common Ports")
+		print("1 - Range of Balls \n2 - Common Ports")
 		portChoice = int(input("[I] Select your option: "))
 		portsToScan = handle_port_choice(portChoice)
 		
@@ -97,7 +99,9 @@ def main():
 			currentIp = ipMask + "." + str(ip)
 			#thread.start_new_thread(scan_target_IP, (currentIp, portsToScan))
 			scan_target_IP(currentIp, portsToScan)
-	
+
+# i cant do anymore i'm doing all this on my phone Ok Bye
+
 	elif choice == 3:
 		print("Enter the IP addresses to scan, seperated by a ','")
 		print("e.g, 0.0.0.0,0.0.0.1")
